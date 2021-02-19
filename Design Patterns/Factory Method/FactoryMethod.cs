@@ -7,17 +7,10 @@ namespace FactoryMethodPattern
         public void Main()
         {
 
-            // Code without factory method
-            Console.WriteLine("WITHOUT Factory Method:");
-            Enemy2 enemy2 = new Enemy2();
-            Enemy2 mob = enemy2.Create(4); // lvl 4 = gremlin
-            mob.ShowName();
-            Console.WriteLine();
-
-            // Code with factory method, in this case im using the enemy factory depending on the character lvl
+            // In this case im using the enemy factory depending on the character lvl
             Console.WriteLine("WITH Factory Method - Spawning enemies depending on the character lvl:");
             ConcreteEnemyLvlFactory concreteEnemyLvlFactory = new ConcreteEnemyLvlFactory();
-            IEnemy lvlEnemy = concreteEnemyLvlFactory.Build(60); // lvl 20 = gargola
+            IEnemy lvlEnemy = concreteEnemyLvlFactory.Build(60); // lvl 60 = gargola
             lvlEnemy.ShowName();
             Console.WriteLine();
 
@@ -25,52 +18,15 @@ namespace FactoryMethodPattern
             // Code with factory method, in this case im using the random enemy factory
             Console.WriteLine("WITH Factory Method - Random enemies!:");
             ConcreteEnemyRandomFactory concreteEnemyRandomFactory = new ConcreteEnemyRandomFactory();
-            IEnemy randomEnemy = concreteEnemyRandomFactory.Build(60); // lvl 20 = gargola
+            IEnemy randomEnemy = concreteEnemyRandomFactory.Build(60);
             randomEnemy.ShowName();
             Console.WriteLine();
+
         }
 
     }
 
-    #region No factory method
-    // Use factory method to avoid something like this
-    class Enemy2
-    {
-        public Enemy2 Create(int playerLvl)
-        {
-            // The parent class is applying logic for creating their child classes
-            if (playerLvl <= 30)
-            {
-                return new Gremlin2();
-            }
-
-            return new Gargoyle2();
-        }
-
-        public virtual void ShowName()
-        {
-            Console.WriteLine("Enemy without name");
-        }
-    }
-
-    class Gremlin2 : Enemy2
-    {
-    override public void ShowName()
-        {
-            Console.WriteLine("I'm a Gremlin, i'm going to kill you with my big stick!");
-        }
-    }
-
-    class Gargoyle2 : Enemy2
-    {
-        override public void ShowName()
-        {
-            Console.WriteLine("I will stab my wings in your throat!");
-        }
-    }
-    #endregion
-
-    #region USING factory method
+    #region factory method
 
     public interface IEnemy
     {

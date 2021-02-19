@@ -2,6 +2,7 @@
 using AbstractFactoryPattern;
 using BuilderPattern;
 using FactoryMethodPattern;
+using PrototypePattern;
 
 namespace Design_Patterns
 {
@@ -12,6 +13,7 @@ namespace Design_Patterns
             //RunFactoryMethod();
             //RunAbstractFactory();
             //RunBuilder();
+            RunPrototype();
 
             Console.Read();
         }
@@ -37,6 +39,14 @@ namespace Design_Patterns
             Console.WriteLine("##################################");
             Console.WriteLine("BUILDER:");
             new Builder().Main();
+            Console.WriteLine("##################################\n\n");
+        }
+
+        static void RunPrototype()
+        {
+            Console.WriteLine("##################################");
+            Console.WriteLine("PROTOTYPE:");
+            new Prototype().Main();
             Console.WriteLine("##################################\n\n");
         }
     }
