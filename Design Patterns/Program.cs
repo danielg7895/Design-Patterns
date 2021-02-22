@@ -3,6 +3,7 @@ using AbstractFactoryPattern;
 using BuilderPattern;
 using FactoryMethodPattern;
 using PrototypePattern;
+using SingletonPattern;
 
 namespace Design_Patterns
 {
@@ -13,7 +14,8 @@ namespace Design_Patterns
             //RunFactoryMethod();
             //RunAbstractFactory();
             //RunBuilder();
-            RunPrototype();
+            //RunPrototype();
+            RunSingleton();
 
             Console.Read();
         }
@@ -47,6 +49,14 @@ namespace Design_Patterns
             Console.WriteLine("##################################");
             Console.WriteLine("PROTOTYPE:");
             new Prototype().Main();
+            Console.WriteLine("##################################\n\n");
+        }
+
+        static void RunSingleton()
+        {
+            Console.WriteLine("##################################");
+            Console.WriteLine("SINGLETON:");
+            new Singleton().Main();
             Console.WriteLine("##################################\n\n");
         }
     }
