@@ -1,6 +1,8 @@
 ﻿using System;
 using AbstractFactoryPattern;
+using AdapterPattern;
 using BuilderPattern;
+using CompositePattern;
 using FactoryMethodPattern;
 using PrototypePattern;
 using SingletonPattern;
@@ -15,7 +17,9 @@ namespace Design_Patterns
             //RunAbstractFactory();
             //RunBuilder();
             //RunPrototype();
-            RunSingleton();
+            //RunSingleton();
+            //RunAdapter();
+            RunComposite();
 
             Console.Read();
         }
@@ -57,6 +61,22 @@ namespace Design_Patterns
             Console.WriteLine("##################################");
             Console.WriteLine("SINGLETON:");
             new Singleton().Main();
+            Console.WriteLine("##################################\n\n");
+        }
+
+        static void RunAdapter()
+        {
+            Console.WriteLine("##################################");
+            Console.WriteLine("ADAPTER:");
+            new Adapter().Main();
+            Console.WriteLine("##################################\n\n");
+        }
+
+        static void RunComposite()
+        {
+            Console.WriteLine("##################################");
+            Console.WriteLine("COMPOSITE:");
+            new Composite().Main();
             Console.WriteLine("##################################\n\n");
         }
     }
