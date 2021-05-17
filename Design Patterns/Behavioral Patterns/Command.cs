@@ -1,0 +1,6 @@
+﻿namespace CommandPattern
+{
+    class Command
+    {
+    }
+}

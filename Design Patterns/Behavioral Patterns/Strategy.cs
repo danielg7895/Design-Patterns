@@ -1,0 +1,6 @@
+﻿namespace StrategyPattern
+{
+    class Strategy
+    {
+    }
+}

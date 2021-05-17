@@ -1,0 +1,6 @@
+﻿namespace StatePattern
+{
+    class State
+    {
+    }
+}

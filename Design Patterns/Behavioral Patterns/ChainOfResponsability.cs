@@ -1,0 +1,6 @@
+﻿namespace ChainOfResponsabilityPattern
+{
+    class ChainOfResponsability
+    {
+    }
+}
